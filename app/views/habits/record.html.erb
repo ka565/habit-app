@@ -1,0 +1,17 @@
+<%= form_with model: @habit, url: update_record_habit_path(@habit), method: :patch do |form| %>
+<div class="actual_value-page">
+  <div>
+    <%= form.label :成果を入力してみましょう, class: "actual_value-formtext" %>
+  </div>
+
+  <div>
+    <%= form.number_field :actual_value, class: "actual_value-form" %> <%= @habit.unit %>
+  </div>
+
+  <div class = "actual-submit-btn">
+    <%= form.submit "完了"%>
+    </div>
+
+</div>
+
+<% end %>

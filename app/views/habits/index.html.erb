@@ -1,0 +1,69 @@
+<div class="index-action">
+  <div class = "habit-header">
+    <%= link_to "習慣を追加する", new_habit_path, data: {turbo: false} ,class: "habit-add" %>
+
+    <%= text_field_tag :search, params[:search], placeholder: "習慣を検索...", class: "habit-search", id: "habit-searchid" %>
+
+    <%= select_tag :sort, options_for_select([["古い順", "oldest"],["新しい順", "newest"],["やるべき習慣のみ"],["やめるべき習慣のみ"]], params[:sort]), class: "habit-sort", id: "habit-sort" %>
+
+    <button id="edit-mode-btn" class ="edit-btn">編集</button>
+    <button id="cancel-edit-btn" class ="cancel-btn hidden">キャンセル</button>
+    <button id="delete-selected-btn" class ="delete-btn hidden">削除</button>
+  </div>
+  <h4 class = "heading">習慣リスト</h4>
+
+  <div class="habit-lists">
+    <% @habits.each do |habit| %>
+    <div class="each-habit" data-id="<%= habit.id %>" data-user-id="<%= habit.user_id %>">
+      
+     <input type="checkbox" class="habit-checkbox hidden" data-id="<%= habit.id %>">
+
+      <div class="left-side">
+        <span class="habit-title"> <%= habit.name %></span>
+        <span class="actual_value-link">
+          <%= link_to "成果を入力する", record_habit_path(habit) %>
+        </span>
+      </div>
+
+      <div class="right-side">
+        <span class="habit-goal" data-goal-value="<%= habit.goal_value %>">残り: <%= habit.current_value %><%= habit.unit %></span>
+
+        <span class="result-message">
+          結果: <% if habit.goal_type == "do" %>
+                 <% if habit.current_value > 0 %>
+                  <%= habit.current_value %><%= habit.unit %>の不足です
+                   <% else %> 
+                     <%=  habit.current_value %><%= habit.unit %>の余裕があります 
+                    <% end %> 
+                     <%elsif habit.goal_type == "dont" %> 
+                     <% if habit.current_value > 0 %> <%=  habit.current_value %><%= habit.unit %>の余裕があります
+                    <% else %> 
+                      <%= habit.current_value %><%= habit.unit %>オーバーしています
+                       <% end %> 
+                      <% end %>
+        </span>
+
+        <span class="habit-detail">
+           <%= link_to "詳細を見る", details_habit_path(habit) %>
+
+        </span>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  console.log("calcjs");
+  document.addEventListener("(turbo:load",function(){
+    const habitss = document.querySelectorAll(".each-habit");
+
+    habitss.forEach((habit) => {
+      const habitId = habit.dataset.id;
+      const userId = habit.dataset.userId;
+      const goalValue = parseFloat(habit.querySelector(".habit_goal").dataset.goalValue);
+      comsole.log(`習慣ID{habitId}は加算済み`);
+    });
+  });
+</script>
+

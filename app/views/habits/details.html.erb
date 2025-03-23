@@ -1,0 +1,19 @@
+<div class="habit-container">
+
+
+<div class="habit-details">
+
+<h2><%= @habit.name %></h2>
+
+<p>ペース:<%= @habit.period %>日で<%= @habit.goal_value %><%= @habit.unit %></p>
+
+<p>開始日:<%= @habit.start_date %></p>
+</div>
+
+<div id="habit-graph" data-progress = "<%= @progress_records.map { |r| {date: r.date.strftime('%Y/%m/%d'), value: r.value } }.to_json  %>">
+  <canvas id="progress-graph"  width="1000" height="250"></canvas>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" data-turbo-track="reload"></script>
+<script type="module" src="<%= asset_path 'custom/habit_graph.js' %>" data-turbo-track="reload"></script>

@@ -1,0 +1,34 @@
+.actual_value-page{
+  text-align: center;
+  
+}
+
+.actual_value-formtext{
+  color: #007bff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.actual_value-form{
+width: 50px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-top: 70px;
+
+}
+
+.actual-submit-btn{
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actual-submit-btn :hover{
+  background: grey;
+}
