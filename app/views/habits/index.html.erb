@@ -31,14 +31,14 @@
         <span class="result-message">
           結果: <% if habit.goal_type == "do" %>
                  <% if habit.current_value > 0 %>
-                  <%= habit.current_value %><%= habit.unit %>の不足です
+                  <%= habit.current_value.abs %><%= habit.unit %>の不足です
                    <% else %> 
-                     <%=  habit.current_value %><%= habit.unit %>の余裕があります 
+                     <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります 
                     <% end %> 
                      <%elsif habit.goal_type == "dont" %> 
-                     <% if habit.current_value > 0 %> <%=  habit.current_value %><%= habit.unit %>の余裕があります
+                     <% if habit.current_value > 0 %> <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります
                     <% else %> 
-                      <%= habit.current_value %><%= habit.unit %>オーバーしています
+                      <%= habit.current_value.abs %><%= habit.unit %>オーバーしています
                        <% end %> 
                       <% end %>
         </span>

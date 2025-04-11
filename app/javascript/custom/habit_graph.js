@@ -4,9 +4,40 @@
 
 console.log("Chart.js is loaded:", window.Chart);
 
-document.addEventListener("turbo:load", drawChart);
-document.addEventListener("turbo:render", drawChart);
+document.addEventListener("turbo:load", function(){
+  if(typeof Chart === "undefined"){
+    console.warn("Chart.js in not loaded yet. Waiting...");
+    waiForChartLibrary(drawChart);
+  }
+  else{
+    drawChart();
 
+  }
+});
+
+document.addEventListener("turbo:render", function(){
+if(typeof Chart === "undefind"){
+  console.warn("Chart.js in not loaded yet. Waiting...")
+  waiForChartLibrary(drawChart);
+}
+else{
+  drawChart();
+
+}
+
+
+});
+
+function waiForChartLibrary(callback){
+  const interval = setInterval(() => {
+    if(typeof Chart !== "undefined"){
+      clearInterval(interval);
+      callback();
+    }
+    
+  }, 50);
+
+}
   
   function drawChart(){
   const graphelement = document.getElementById("habit-graph");
