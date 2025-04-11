@@ -3,6 +3,7 @@ const editBtn = document.getElementById("edit-mode-btn");
 const cancelBtn = document.getElementById("cancel-edit-btn");
 const deleteBtn = document.getElementById("delete-selected-btn");
 const checkboxes = document.querySelectorAll(".habit-checkbox");
+if(!editBtn) return;
 
 editBtn.addEventListener("click", function(){
   checkboxes.forEach((cb) => cb.classList.remove("hidden"));
