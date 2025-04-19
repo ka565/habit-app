@@ -9,9 +9,29 @@
   </div>
 
   <div class = "actual-submit-btn">
-    <%= form.submit "完了"%>
+    <%= form.submit "完了", id: "actualsubmitbtn"%>
     </div>
 
 </div>
 
 <% end %>
+
+<button id="actualvalue-btn">履歴を表示</button>
+
+<div id="actualvalue-record">
+  <h3>これまでの入力履歴</h3>
+ <table>
+  <tr>
+   <th>日付</th>
+   <th>成果</th>
+  </tr>
+  
+  <% @habit.actual_value_records.order(date: :desc).each do |record| %>
+    <tr>
+     <td><%= record.date.strftime("%Y-%m-%d") %></td>
+     <td><%= record.value %> <%= @habit.unit %></td>
+    </tr>
+  <% end %>
+
+</table>
+</div>

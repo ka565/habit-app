@@ -131,4 +131,20 @@ align-items: flex-start;
   gap: 5px;
 }
 
+.habit-detail{
+  margin-top: 10px;
+}
+
+.btn{
+  padding: 5px 5px;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  background: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+}
+
+
 

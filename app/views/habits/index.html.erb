@@ -4,9 +4,9 @@
 
     <%= text_field_tag :search, params[:search], placeholder: "習慣を検索...", class: "habit-search", id: "habit-searchid" %>
 
-    <%= select_tag :sort, options_for_select([["古い順", "oldest"],["新しい順", "newest"],["やるべき習慣のみ"],["やめるべき習慣のみ"]], params[:sort]), class: "habit-sort", id: "habit-sort" %>
+    <%= select_tag :sort, options_for_select([["古い順", "oldest"],["新しい順", "newest"]], params[:sort]), class: "habit-sort", id: "habit-sort" %>
 
-    <button id="edit-mode-btn" class ="edit-btn">編集</button>
+    <button id="edit-mode-btn" class ="edit-btn">削除</button>
     <button id="cancel-edit-btn" class ="cancel-btn hidden">キャンセル</button>
     <button id="delete-selected-btn" class ="delete-btn hidden">削除</button>
   </div>
@@ -21,7 +21,7 @@
       <div class="left-side">
         <span class="habit-title"> <%= habit.name %></span>
         <span class="actual_value-link">
-          <%= link_to "成果を入力する", record_habit_path(habit) %>
+          <%= link_to "成果を入力する", record_habit_path(habit), class: "btn" %>
         </span>
       </div>
 
@@ -29,23 +29,23 @@
         <span class="habit-goal" data-goal-value="<%= habit.goal_value %>">残り: <%= habit.current_value %><%= habit.unit %></span>
 
         <span class="result-message">
-          結果: <% if habit.goal_type == "do" %>
-                 <% if habit.current_value > 0 %>
-                  <%= habit.current_value.abs %><%= habit.unit %>の不足です
-                   <% else %> 
-                     <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります 
-                    <% end %> 
-                     <%elsif habit.goal_type == "dont" %> 
-                     <% if habit.current_value > 0 %> <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります
-                    <% else %> 
-                      <%= habit.current_value.abs %><%= habit.unit %>オーバーしています
-                       <% end %> 
-                      <% end %>
+        結果: <% if habit.goal_type == "do" %>
+        <% if habit.current_value > 0 %>
+         <%= habit.current_value.abs %><%= habit.unit %>の不足です
+          <% else %> 
+            <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります 
+           <% end %> 
+            <%elsif habit.goal_type == "dont" %> 
+            <% if habit.current_value > 0 %> <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります
+           <% else %> 
+             <%= habit.current_value.abs %><%= habit.unit %>オーバーしています
+              <% end %> 
+             <% end %>
         </span>
 
         <span class="habit-detail">
-           <%= link_to "詳細を見る", details_habit_path(habit) %>
-
+           <%= link_to "詳細を見る", details_habit_path(habit), class: "btn" %>
+           <%= link_to "編集する", edit_habit_path(habit), data: {turbo: false}, class: "btn" %>
         </span>
       </div>
     </div>
@@ -53,17 +53,5 @@
   </div>
 </div>
 
-<script>
-  console.log("calcjs");
-  document.addEventListener("(turbo:load",function(){
-    const habitss = document.querySelectorAll(".each-habit");
 
-    habitss.forEach((habit) => {
-      const habitId = habit.dataset.id;
-      const userId = habit.dataset.userId;
-      const goalValue = parseFloat(habit.querySelector(".habit_goal").dataset.goalValue);
-      comsole.log(`習慣ID{habitId}は加算済み`);
-    });
-  });
-</script>
 
