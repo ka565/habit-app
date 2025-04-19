@@ -23,6 +23,11 @@
   </head>
 
   <body>
+  <% if flash[:notice] || flash[:alert]%>
+  <div id="toast"><%= flash[:notice] || flash[:alert] %></div>
+  <% end %>
+  
+  
     <%= yield %>
   </body>
 </html>

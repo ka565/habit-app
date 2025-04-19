@@ -9,22 +9,19 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-.new-action{
-  background-color: aqua;
-}
+
  .title{
   font-size: 22px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;
-  color: white;
+  color: #007bff;
 
 }
  .form-container{
-  background: aqua;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 10px rgba(135, 137, 133, 0.831);
   
  }
 
@@ -42,21 +39,22 @@
   padding: 5px;
 }
 
+
+
 .submit-btn{
-  background: #4000ff4b;
-  color: white;
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
   width: 100%;
-  display: block;
+  display: inline-block;
   border: none;
   cursor: pointer;
   transition: background 0.3s;
+  text-align: center;
 }
-.submit-btn:hover{
-  background: #0056b3;
+#submitbtn:hover{
+  color: blue;
 }
 
 

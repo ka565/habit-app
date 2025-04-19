@@ -23,8 +23,10 @@ class HabitsController < ApplicationController
     @habit = Habit.new(habit_params)
     @habit.current_value = @habit.goal_value
     if @habit.save
+      flash[:notice] = "習慣を作成しました"
        redirect_to habits_path
     else
+      flash.now[:alert] = "習慣の作成に失敗しました"
        render :new
   end
 end
@@ -36,8 +38,10 @@ end
 def update
   @habit = Habit.find(params[:id])
   if @habit.update(habit_params)
+    flash[:notice] = "習慣を更新しました"
     redirect_to habits_path
   else
+    flash.now[:alert] = "習慣の更新に失敗しました"
     render :edit
   end
 end
@@ -52,8 +56,11 @@ end
     new_goal_value = @habit.current_value - actual_value
     if @habit.update(current_value: new_goal_value, actual_value: actual_value)
       @habit.record_progress
+      @habit.record_actual_value
+      flash[:notice] = "成果を記録しました"
       redirect_to habits_path
     else
+      flash.now[:alert] = "成果の記録に失敗しました"
       render :record
     end
   end
