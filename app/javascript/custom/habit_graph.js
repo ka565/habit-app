@@ -1,9 +1,3 @@
-
-
-
-
-console.log("Chart.js is loaded:", window.Chart);
-
 document.addEventListener("turbo:load", function(){
   if(typeof Chart === "undefined"){
     console.warn("Chart.js in not loaded yet. Waiting...");

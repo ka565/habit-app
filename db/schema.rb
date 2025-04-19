@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_14_235645) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_16_051641) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "actual_value_records", force: :cascade do |t|
+    t.bigint "habit_id", null: false
+    t.date "date"
+    t.float "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["habit_id"], name: "index_actual_value_records_on_habit_id"
+  end
 
   create_table "habits", force: :cascade do |t|
     t.integer "user_id"
@@ -40,5 +49,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_14_235645) do
     t.index ["habit_id"], name: "index_progress_records_on_habit_id"
   end
 
+  add_foreign_key "actual_value_records", "habits"
   add_foreign_key "progress_records", "habits"
 end

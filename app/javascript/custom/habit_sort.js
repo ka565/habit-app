@@ -1,5 +1,3 @@
-console.log("出来てる");
-
 document.addEventListener("turbo:load",function(){
   const habitsort = document.getElementById("habit-sort");
   const habitlists = document.querySelector(".habit-lists");

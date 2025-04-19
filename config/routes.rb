@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :habits, only:[:index, :new, :create, :edit, :update,  :destroy] do
+  resources :habits, only:[:index, :new, :create, :edit, :update, :destroy] do
     member do
       get 'record'
       patch 'update_record'

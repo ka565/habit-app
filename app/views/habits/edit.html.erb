@@ -1,40 +1,33 @@
-<div class = new-action>
+<div class=new-action>
 
 
-<div class = "input-group title">
+<div class="input-group title">
 <h1>習慣を編集できます</h1>
 </div>
 
-<div class = form-container>
+<div class=form-container>
 <%= form_with model: @habit do |form| %>
-  <div class = form-group>
+  <div class=form-group>
   <%= form.label :習慣にしたいこと %> <%= form.text_field :name %>
   </div>
   
-  <div class = form-group>
+  <div class=form-group>
   <%= form.label :ペース %>: <%= form.number_field :period, class: "small-input" %>日で<%= form.number_field :goal_value, class: "small-input" %>(<%= form.label :単位 %>: <%= form.text_field :unit, class: "small-input" %>)
   </div>
   
-  <div class = form-group>
+  <div class=form-group>
   <%= form.label :習慣タイプ %> <%= form.select :goal_type, options_for_select([["やるべきこと", "do"],["やめるべきこと", "dont"]]) %>
   </div>
   
-  <div class = form-group>
+  <div class=form-group>
   <%= form.label :目標の開始日 %> <%= form.date_field :start_date %>
   </div>
  </div>
  
-  <div class = "form-group submit-btn">
+  <div class="form-group submit-btn">
   <%= form.submit "更新"%>
   </div>
   
   <% end %>
-
-
-
-</div>
-
-
-
-
+  </div>
 

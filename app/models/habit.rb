@@ -1,23 +1,27 @@
 class Habit < ApplicationRecord
   has_many :progress_records, dependent: :destroy
+  has_many :actual_value_records, dependent: :destroy
+
+  validates :name, presence: true, on: [:create, :update]
+  validates :period, numericality: {only_integer: true, greater_than_or_equal_to: 1}, on: [:create, :update]
+  validates :goal_value, numericality: {greater_than: 0},  on: [:create, :update]
+  validates :unit, presence: true, on: [:create, :update]
+  validates :goal_type, presence: true, on: [:create, :update]
+  validates :start_date, presence: true, on: [:create, :update]
+  
+  
 
   def record_progress
-    Rails.logger.info "======== record_progress 実行: current_value=#{current_value}========="
     record = progress_records.find_or_initialize_by(date: Date.today)
     record.value = current_value
-    if record.save
-      Rails.logger.info "======== 成功: progress_records に保存されました========="
-    else
-      Rails.logger.info "======== 失敗: #{record.errors.full_messages}========="
-    end
+    record.save
   end
 
-  def recent_progress(days = 7)
-    progress_records.where("date >= ?", days.days.ago).order(:date)
+  def record_actual_value
+    record = actual_value_records.create(date: Date.today, value: self.actual_value)
   end
   
   def auto_increment_value
-    Rails.logger.info "======== 加算前のcurrent_value: #{current_value}========="
 
 
     last_date = last_increment_date || start_date
@@ -36,7 +40,6 @@ class Habit < ApplicationRecord
 
      record_progress
      
-     Rails.logger.info "======== 加算後のcurrent_value: #{current_value}========="
 
   end
 end
