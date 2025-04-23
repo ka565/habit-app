@@ -8,6 +8,7 @@ class Habit < ApplicationRecord
   validates :unit, presence: true, on: [:create, :update]
   validates :goal_type, presence: true, on: [:create, :update]
   validates :start_date, presence: true, on: [:create, :update]
+  validates :actual_value, numericality: {greater_than: 0},  on: :update_record
   
   
 

@@ -7,7 +7,7 @@
 </div>
 
 <div class = form-container>
-<%= form_with model: @habit do |form| %>
+<%= form_with model: @habit,data: {turbo: false} do |form| %>
   <div class = form-group>
   <%= form.label :習慣にしたいこと %> <%= form.text_field :name %>
   </div>

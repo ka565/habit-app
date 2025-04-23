@@ -11,9 +11,20 @@
 }
 
 .habit-add{
+  padding: 5px 5px;
   text-decoration: none;
   color: #007bff;
   font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+}
+
+.habit-add:hover{
+  background: #f2f3f4;
+  border-radius: 5px;
+
 }
 
 .habit-search{
@@ -28,6 +39,11 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     
+  }
+
+  .habit-sort:hover{
+    background: #f2f3f4;
+  border-radius: 4px;
   }
 
 .heading{
@@ -69,17 +85,31 @@
 }
 
 .edit-btn{
-  background: #007bff;
+  background: red;
   color: white;
 }
+
+.edit-btn:hover{
+  background: rgb(235, 6, 6);
+}
+
 .cancel-btn{
-  background: #888;
+  background: #c3c1c273;
   color: white;
+}
+
+.cancel-btn:hover{
+  background:  #8d8c8c73;
 }
 
 .delete-btn{
-  color: red;
+  background: red;
+  color: white;
 
+}
+
+.delete-btn:hover{
+  background: rgb(235, 6, 6);
 }
 
 .hidden{
@@ -145,6 +175,13 @@ align-items: flex-start;
   background: #f8f9fa;
   border-bottom: 2px solid #ddd;
 }
+
+.btn:hover{
+  background: #f2f3f4;
+  border-radius: 4px;
+}
+
+
 
 
 
