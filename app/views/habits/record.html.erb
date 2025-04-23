@@ -1,4 +1,4 @@
-<%= form_with model: @habit, url: update_record_habit_path(@habit), method: :patch do |form| %>
+<%= form_with model: @habit, url: update_record_habit_path(@habit), method: :patch, data: {turbo: false} do |form| %>
 <div class="actual_value-page">
   <div>
     <%= form.label :成果を入力してみましょう, class: "actual_value-formtext" %>

@@ -26,10 +26,10 @@ class HabitsController < ApplicationController
       flash[:notice] = "習慣を作成しました"
        redirect_to habits_path
     else
-      flash.now[:alert] = "習慣の作成に失敗しました"
+       flash.now[:alert] = "入力していない項目があります"
        render :new
-  end
-end
+      end
+    end
 
 def edit
   @habit = Habit.find(params[:id])
@@ -41,7 +41,7 @@ def update
     flash[:notice] = "習慣を更新しました"
     redirect_to habits_path
   else
-    flash.now[:alert] = "習慣の更新に失敗しました"
+    flash.now[:alert] = "入力していない項目があります"
     render :edit
   end
 end
@@ -53,14 +53,16 @@ end
   def  update_record
     @habit = Habit.find(params[:id])
     actual_value = params[:habit][:actual_value].to_f
-    new_goal_value = @habit.current_value - actual_value
-    if @habit.update(current_value: new_goal_value, actual_value: actual_value)
+    @habit.actual_value = actual_value
+    @habit.current_value -= actual_value
+    if @habit.valid?(:update_record)
       @habit.record_progress
       @habit.record_actual_value
+      @habit.save
       flash[:notice] = "成果を記録しました"
       redirect_to habits_path
     else
-      flash.now[:alert] = "成果の記録に失敗しました"
+      flash.now[:alert] = "0より大きい数字を入力してください"
       render :record
     end
   end
