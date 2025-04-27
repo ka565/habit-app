@@ -12,6 +12,9 @@ Rails.application.configure do
   # Full error reports are disabled.
   config.consider_all_requests_local = false
 
+  #追加部分
+  config.assets.compile = true
+
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
@@ -38,7 +41,9 @@ Rails.application.configure do
   config.logger   = ActiveSupport::TaggedLogging.logger(STDOUT)
 
   # Change to "debug" to log everything (including potentially personally-identifiable information!)
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
+  
+  #右辺を変更
+  config.log_level = :info
 
   # Prevent health checks from clogging up the logs.
   config.silence_healthcheck_path = "/up"
