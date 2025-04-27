@@ -28,5 +28,7 @@ test:
 production:
   <<: *default
   database: habitapp_production
-  username: your_production_username
-  password: <%= ENV['YOUR_DATABASE_PASSWORD'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: 5432
