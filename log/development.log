@@ -43236,3 +43236,177 @@ Processing by HabitsController#index as HTML
 Completed 200 OK in 1417ms (Views: 3.9ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USERNAME[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Habitapp'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Habitapp'*/[0m
+  [1m[35m (334.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "habitapp_development" /*application='Habitapp'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='Habitapp'*/[0m
+  [1m[35m (237.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "habitapp_test" /*application='Habitapp'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='Habitapp'*/[0m
+  [1m[35m (810.9ms)[0m  [1m[35mCREATE DATABASE "habitapp_development" ENCODING = 'unicode' /*application='Habitapp'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='Habitapp'*/[0m
+  [1m[35m (679.7ms)[0m  [1m[35mCREATE DATABASE "habitapp_test" ENCODING = 'unicode' /*application='Habitapp'*/[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='Habitapp'*/[0m
+  [1m[35m (25.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Habitapp'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0) /*application='Habitapp'*/[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-25 01:53:14.769925', '2025-05-25 01:53:14.769931') RETURNING "key" /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '9c6777daaa6ce85cc74b26c38000144a7834a947', '2025-05-25 01:53:14.790101', '2025-05-25 01:53:14.790105') RETURNING "key" /*application='Habitapp'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6222671165798397765) /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Habitapp'*/[0m
+Migrating to CreateHabits (20250216031745)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE "habits" ("id" bigserial primary key, "user_id" integer, "name" character varying, "goal_value" decimal, "unit" character varying, "actual_value" decimal, "carryover_value" decimal, "goal_type" character varying, "start_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250216031745') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to AddPeriodToHabits (20250221024321)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (7.4ms)[0m  [1m[35mALTER TABLE "habits" ADD "period" integer /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250221024321') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to AddCurrentValueToHabits (20250222052129)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "habits" ADD "current_value" decimal DEFAULT 0.0 /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250222052129') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to AddLastIncrementDateToHabits (20250311060727)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (5.4ms)[0m  [1m[35mALTER TABLE "habits" ADD "last_increment_date" date /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250311060727') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to CreateProgressRecords (20250314235645)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "progress_records" ("id" bigserial primary key, "habit_id" bigint NOT NULL, "date" date, "value" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_a3ae3c4e10"
+FOREIGN KEY ("habit_id")
+  REFERENCES "habits" ("id")
+) /*application='Habitapp'*/[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE INDEX "index_progress_records_on_habit_id" ON "progress_records" ("habit_id") /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250314235645') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to CreateActualValueRecords (20250416051641)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "actual_value_records" ("id" bigserial primary key, "habit_id" bigint NOT NULL, "date" date, "value" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_64996c4618"
+FOREIGN KEY ("habit_id")
+  REFERENCES "habits" ("id")
+) /*application='Habitapp'*/[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_actual_value_records_on_habit_id" ON "actual_value_records" ("habit_id") /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250416051641') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to RemoveUserIdAndCarryoverValueFromHabits (20250422085833)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE "habits" DROP COLUMN "user_id" /*application='Habitapp'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "habits" DROP COLUMN "carryover_value" /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250422085833') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to CreateUsers (20250517025107)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250517025107') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+Migrating to AddUserIdToHabits (20250517030000)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='Habitapp'*/[0m
+  [1m[35m (5.7ms)[0m  [1m[35mALTER TABLE "habits" ADD "user_id" integer /*application='Habitapp'*/[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "habits" ADD CONSTRAINT "fk_rails_541267aaf9"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='Habitapp'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_habits_on_user_id" ON "habits" ("user_id") /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250517030000') RETURNING "version" /*application='Habitapp'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Habitapp'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6222671165798397765) /*application='Habitapp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Habitapp'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USERNAME[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/habits" for ::1 at 2025-05-25 10:53:45 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Habitapp'*/[0m
+Processing by HabitsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 10 LIMIT 1 /*action='index',application='Habitapp',controller='habits'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3445ms (ActiveRecord: 26.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2025-05-25 10:53:50 +0900
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 10 LIMIT 1 /*action='new',application='Habitapp',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 117.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 532.8ms | GC: 0.0ms)
+Completed 200 OK in 1978ms (Views: 695.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/details-70bae46c.css" for ::1 at 2025-05-25 10:53:52 +0900
+Started GET "/assets/flash-9b520744.css" for ::1 at 2025-05-25 10:53:52 +0900
+Started GET "/assets/index-0ff25cc9.css" for ::1 at 2025-05-25 10:53:52 +0900
+Started GET "/assets/new-6de1a386.css" for ::1 at 2025-05-25 10:53:52 +0900
+Started GET "/assets/record-eb8ac0f8.css" for ::1 at 2025-05-25 10:53:52 +0900
+Started GET "/assets/usersnew-8063dd64.css" for ::1 at 2025-05-25 10:53:52 +0900
+Started GET "/assets/application-80d7d0c7.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/turbo.min-fae85750.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/custom/habit_search-e11a71b0.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/custom/habit_sort-7233f3ea.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/custom/habit_delete-950fe4a6.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/custom/flash-10f05d29.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/custom/habit_graph-aa52bee2.js" for ::1 at 2025-05-25 10:53:53 +0900
+Started GET "/assets/custom/logout-fb56a64f.js" for ::1 at 2025-05-25 10:53:54 +0900
+Started GET "/assets/custom/record-7176aa04.js" for ::1 at 2025-05-25 10:53:54 +0900
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-05-25 10:53:54 +0900
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-05-25 10:53:54 +0900
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-05-25 10:53:54 +0900
+Started GET "/users/new" for ::1 at 2025-05-25 10:54:46 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 10 LIMIT 1 /*action='new',application='Habitapp',controller='users'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 1358ms (Views: 15.4ms | ActiveRecord: 14.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2025-05-25 10:55:52 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"username" => "kmn02445", "password" => "[FILTERED]"}, "commit" => "新規登録"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 10 LIMIT 1 /*action='create',application='Habitapp',controller='users'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='Habitapp',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:12:in 'UsersController#create'
+  [1m[36mUser Exists? (7.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'kmn02445' LIMIT 1 /*action='create',application='Habitapp',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:12:in 'UsersController#create'
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ('kmn02445', '$2a$12$6R0dKKrW0FNJ2HFcXGYsh.TN/WQgdxuepCphbnS/fc21GISRWBvTO', '2025-05-25 01:55:54.268131', '2025-05-25 01:55:54.268131') RETURNING "id" /*action='create',application='Habitapp',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:12:in 'UsersController#create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT /*action='create',application='Habitapp',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:12:in 'UsersController#create'
+Redirected to http://localhost:3000/habits
+Completed 302 Found in 1810ms (ActiveRecord: 13.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/habits" for ::1 at 2025-05-25 10:55:54 +0900
+Processing by HabitsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Habitapp',controller='habits'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  [1m[36mHabit Load (3.3ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."user_id" = 1 /*action='index',application='Habitapp',controller='habits'*/[0m
+  ↳ app/controllers/habits_controller.rb:7:in 'HabitsController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering habits/index.html.erb within layouts/application
+  Rendered habits/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 1735ms (Views: 13.0ms | ActiveRecord: 8.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
