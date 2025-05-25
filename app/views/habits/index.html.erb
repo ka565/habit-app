@@ -1,4 +1,12 @@
 <div class="index-action">
+<div class="user-menu">
+<% if current_user %>
+  <span id="dropdownbtn">ユーザー:<%= current_user.username %> ▼</span>
+  <div id="dropdownmenu" class="dropdown-menu hidden">
+  <%= button_to "ログアウト", logout_path, method: :delete,data: {turbo_confirm: "ログアウトしますか?"},class:"logout-btn" %>
+  </div>
+  <% end %>
+</div>
   <div class = "habit-header">
     <%= link_to "習慣を追加する", new_habit_path, data: {turbo: false} ,class: "habit-add" %>
 

@@ -1,4 +1,5 @@
 class Habit < ApplicationRecord
+  belongs_to :user
   has_many :progress_records, dependent: :destroy
   has_many :actual_value_records, dependent: :destroy
 

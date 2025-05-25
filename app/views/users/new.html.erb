@@ -1,0 +1,21 @@
+
+<div class=usersnew-action>
+<h2>新規登録</h2>
+
+<%= form_with model: @user,data: {turbo: false} do |form| %>
+    <div class=registration-form>
+     <%= form.label :ユーザー名 %> 
+     <%= form.text_field :username %>
+    </div>
+    <div class=registration-form>
+     <%= form.label :パスワード %> 
+     <%= form.password_field :password %>
+    </div>
+    
+    <div class=registration-form>
+     <%= form.submit "新規登録",id:"rg-btn" %>
+    </div>
+
+
+ <% end %>
+</div>

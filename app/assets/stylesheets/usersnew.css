@@ -1,0 +1,41 @@
+.usersnew-action{
+text-align: center;
+}
+
+.registration-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.registration-form label{
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.registration-form input{
+  padding: 10px;
+}
+#rg-btn{
+  width: 186px;
+  color: #007bff;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+#rglink{
+  padding: 5px 5px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+}
+
+#rglink:hover{
+  background: #f2f3f4;
+  border-radius: 5px;
+
+}
+

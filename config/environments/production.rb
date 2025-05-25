@@ -15,6 +15,9 @@ Rails.application.configure do
   #追加部分
   config.assets.compile = true
 
+  #追加部分
+  config.require_master_key = true
+
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 

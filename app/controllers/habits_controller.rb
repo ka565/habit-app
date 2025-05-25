@@ -1,18 +1,15 @@
 class HabitsController < ApplicationController
-  def index
-    @habits = Habit.all
-  end
+  before_action :require_login
 
   
-  def auto_increment_value
-  @habits = Habit.all
-
-  @habits.each do |habit|
+  def index
+   @habits = current_user.habits
+   @habits.each do |habit|
     habit.auto_increment_value
+   end
   end
 
-   redirect_to habits_path
-  end
+
 
 
   def new 
@@ -21,6 +18,7 @@ class HabitsController < ApplicationController
 
   def create
     @habit = Habit.new(habit_params)
+    @habit.user = current_user
     @habit.current_value = @habit.goal_value
     if @habit.save
       flash[:notice] = "習慣を作成しました"
