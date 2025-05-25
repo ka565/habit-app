@@ -12,6 +12,7 @@ pin "custom/habit_delete", to: "custom/habit_delete.js"
 pin "custom/habit_graph", to: "custom/habit_graph.js"
 pin "custom/flash", to: "custom/flash.js"
 pin "custom/record", to: "custom/record.js"
+pin "custom/logout", to:"custom/logout.js"
 
 pin "chart.js", to: "https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"
 
