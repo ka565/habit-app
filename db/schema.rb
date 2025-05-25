@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_17_025107) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_17_030000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -30,17 +30,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_17_025107) do
     t.decimal "actual_value"
     t.string "goal_type"
     t.date "start_date"
-    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "period"
-    t.decimal "current_value"
+    t.decimal "current_value", default: "0.0"
     t.date "last_increment_date"
     t.integer "user_id"
+    t.index ["user_id"], name: "index_habits_on_user_id"
   end
 
   create_table "progress_records", force: :cascade do |t|
-    t.integer "habit_id", null: false
+    t.bigint "habit_id", null: false
     t.date "date"
     t.float "value"
     t.datetime "created_at", null: false
@@ -56,5 +56,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_17_025107) do
   end
 
   add_foreign_key "actual_value_records", "habits"
+  add_foreign_key "habits", "users"
   add_foreign_key "progress_records", "habits"
 end
