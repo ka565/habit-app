@@ -9,6 +9,7 @@ import "custom/habit_delete"
 import "custom/habit_graph"
 import "custom/flash"
 import "custom/record"
+import "custom/logout"
 
 
 
