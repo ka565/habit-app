@@ -1,13 +1,14 @@
 <div class="index-action">
-<div class="user-menu">
-<% if current_user %>
-  <span id="dropdownbtn">ユーザー:<%= current_user.username %> ▼</span>
-  <div id="dropdownmenu" class="dropdown-menu hidden">
-  <%= button_to "ログアウト", logout_path, method: :delete,data: {turbo_confirm: "ログアウトしますか?"},class:"logout-btn" %>
+  <div class="user-menu">
+    <% if current_user %>
+      <span id="dropdownbtn">ユーザー:<%= current_user.username %> ▼</span>
+      <div id="dropdownmenu" class="dropdown-menu hidden">
+        <%= button_to "ログアウト", logout_path, method: :delete,data: {turbo_confirm: "ログアウトしますか?"},class:"logout-btn" %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-  <div class = "habit-header">
+
+  <div class="habit-header">
     <%= link_to "習慣を追加する", new_habit_path, data: {turbo: false} ,class: "habit-add" %>
 
     <%= text_field_tag :search, params[:search], placeholder: "習慣を検索...", class: "habit-search", id: "habit-searchid" %>
@@ -18,45 +19,48 @@
     <button id="cancel-edit-btn" class ="cancel-btn hidden">キャンセル</button>
     <button id="delete-selected-btn" class ="delete-btn hidden">削除</button>
   </div>
-  <h4 class = "heading">習慣リスト</h4>
+
+  <h4 class="heading">習慣リスト</h4>
 
   <div class="habit-lists">
     <% @habits.each do |habit| %>
-    <div class="each-habit" data-id="<%= habit.id %>">
+      <div class="each-habit" data-id="<%= habit.id %>">
       
-     <input type="checkbox" class="habit-checkbox hidden" data-id="<%= habit.id %>">
+        <input type="checkbox" class="habit-checkbox hidden" data-id="<%= habit.id %>">
 
-      <div class="left-side">
-        <span class="habit-title"> <%= habit.name %></span>
-        <span class="actual_value-link">
-          <%= link_to "成果を入力する", record_habit_path(habit), class: "btn" %>
-        </span>
-      </div>
+        <div class="left-side">
+          <span class="habit-title"> <%= habit.name %></span>
+          <span class="actual_value-link">
+            <%= link_to "成果を入力する", record_habit_path(habit), class: "btn" %>
+          </span>
+        </div>
 
-      <div class="right-side">
-        <span class="habit-goal" data-goal-value="<%= habit.goal_value %>">残り: <%= habit.current_value %><%= habit.unit %></span>
+        <div class="right-side">
+          <span class="habit-goal" data-goal-value="<%= habit.goal_value %>">残り: <%= habit.current_value %><%= habit.unit %></span>
 
-        <span class="result-message">
-        結果: <% if habit.goal_type == "do" %>
-        <% if habit.current_value > 0 %>
-         <%= habit.current_value.abs %><%= habit.unit %>の不足です
-          <% else %> 
-            <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります 
-           <% end %> 
-            <%elsif habit.goal_type == "dont" %> 
-            <% if habit.current_value > 0 %> <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります
-           <% else %> 
-             <%= habit.current_value.abs %><%= habit.unit %>オーバーしています
+          <span class="result-message">
+  結果:     <% if habit.goal_type == "do" %>
+              <% if habit.current_value > 0 %>
+                <%= habit.current_value.abs %><%= habit.unit %>の不足です
+              <% else %> 
+                <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります 
               <% end %> 
-             <% end %>
-        </span>
 
-        <span class="habit-detail">
-           <%= link_to "詳細を見る", details_habit_path(habit), class: "btn" %>
-           <%= link_to "編集する", edit_habit_path(habit), data: {turbo: false}, class: "btn" %>
-        </span>
+            <%elsif habit.goal_type == "dont" %> 
+              <% if habit.current_value > 0 %> 
+                <%=  habit.current_value.abs %><%= habit.unit %>の余裕があります
+              <% else %> 
+                <%= habit.current_value.abs %><%= habit.unit %>オーバーしています
+              <% end %> 
+            <% end %>
+          </span>
+
+          <span class="habit-detail">
+            <%= link_to "詳細を見る", details_habit_path(habit), class: "btn" %>
+            <%= link_to "編集する", edit_habit_path(habit), data: {turbo: false}, class: "btn" %>
+          </span>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
